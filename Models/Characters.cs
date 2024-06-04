@@ -11,6 +11,8 @@ namespace DnDCharacterCreator.Models
         public int Class { get; set; }
         public int Level { get; set; }
         public string Alignment { get; set; }
+        public int Hit_point_maximum { get; set; }
+        public int Hit_point_current { get; set; }
         public int Background { get; set; }
         public int EXP { get; set; }
         public int Inventory { get; set; }
