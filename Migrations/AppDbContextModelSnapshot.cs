@@ -23,19 +23,15 @@ namespace DnDCharacterCreator.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Background_name")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Bonds")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Flaws")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Ideals")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.HasKey("Background_id");
@@ -75,6 +71,12 @@ namespace DnDCharacterCreator.Migrations
                     b.Property<string>("Hit_dice_total")
                         .IsRequired()
                         .HasColumnType("TEXT");
+
+                    b.Property<int>("Hit_point_current")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("Hit_point_maximum")
+                        .HasColumnType("INTEGER");
 
                     b.Property<int>("Inventory")
                         .HasColumnType("INTEGER");
@@ -327,59 +329,9 @@ namespace DnDCharacterCreator.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("Acrobatics")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int>("Animal_handling")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int>("Arcana")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int>("Athletics")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int>("Deception")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int>("History")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int>("Insight")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int>("Intimidation")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int>("Investigation")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int>("Medicine")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int>("Nature")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int>("Perception")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int>("Performance")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int>("Persuasion")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int>("Religion")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int>("Slight_of_hand")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int>("Stealth")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int>("Survival")
-                        .HasColumnType("INTEGER");
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
 
                     b.HasKey("Skill_id");
 

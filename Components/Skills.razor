@@ -1,0 +1,49 @@
+﻿@page "/skills"
+@rendermode InteractiveServer
+@using Radzen
+@using DnDCharacterCreator.Models
+@using System.Reflection
+@using System.Collections.Generic
+@using System.Linq
+
+<RadzenCard class="p-0">
+    <RadzenStack Orientation="@orientation" Gap="@gap" Reverse="@reverse" JustifyContent="@justifyContent" AlignItems="@alignItems" Wrap="@wrap" Style="height: 400px">
+        @if (skillNames != null && skillNames.Any())
+        {
+            @foreach (var skillName in skillNames)
+            {
+                <RadzenCard class="p-1 rz-background-color-info rz-color-on-info rz-text-align-center">
+                    @skillName
+                </RadzenCard>
+            }
+        }
+        else
+        {
+            <RadzenCard class="p-1 rz-background-color-info rz-color-on-info rz-text-align-center">
+                No skills found
+            </RadzenCard>
+        }
+    </RadzenStack>
+</RadzenCard>
+
+@code {
+    Orientation orientation = Orientation.Vertical;
+    AlignItems alignItems = AlignItems.Normal;
+    JustifyContent justifyContent = JustifyContent.Normal;
+    FlexWrap wrap = FlexWrap.NoWrap;
+    string gap = "10px";
+    bool reverse;
+
+    private List<string> skillNames;
+
+    protected override void OnInitialized()
+    {
+   
+
+        skillNames = typeof(Skills).GetProperties(BindingFlags.Public | BindingFlags.Instance)
+            .Where(p => p.PropertyType == typeof(int) && p.Name != "Skill_id")
+            .Select(p => p.Name)
+            .ToList();
+    }
+}
+

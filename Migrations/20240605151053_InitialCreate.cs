@@ -16,10 +16,10 @@ namespace DnDCharacterCreator.Migrations
                 {
                     Background_id = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    Background_name = table.Column<string>(type: "TEXT", nullable: false),
-                    Bonds = table.Column<string>(type: "TEXT", nullable: false),
-                    Ideals = table.Column<string>(type: "TEXT", nullable: false),
-                    Flaws = table.Column<string>(type: "TEXT", nullable: false)
+                    Background_name = table.Column<string>(type: "TEXT", nullable: true),
+                    Bonds = table.Column<string>(type: "TEXT", nullable: true),
+                    Ideals = table.Column<string>(type: "TEXT", nullable: true),
+                    Flaws = table.Column<string>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -139,24 +139,7 @@ namespace DnDCharacterCreator.Migrations
                 {
                     Skill_id = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    Acrobatics = table.Column<int>(type: "INTEGER", nullable: false),
-                    Animal_handling = table.Column<int>(type: "INTEGER", nullable: false),
-                    Arcana = table.Column<int>(type: "INTEGER", nullable: false),
-                    Athletics = table.Column<int>(type: "INTEGER", nullable: false),
-                    Deception = table.Column<int>(type: "INTEGER", nullable: false),
-                    History = table.Column<int>(type: "INTEGER", nullable: false),
-                    Insight = table.Column<int>(type: "INTEGER", nullable: false),
-                    Intimidation = table.Column<int>(type: "INTEGER", nullable: false),
-                    Investigation = table.Column<int>(type: "INTEGER", nullable: false),
-                    Medicine = table.Column<int>(type: "INTEGER", nullable: false),
-                    Nature = table.Column<int>(type: "INTEGER", nullable: false),
-                    Perception = table.Column<int>(type: "INTEGER", nullable: false),
-                    Performance = table.Column<int>(type: "INTEGER", nullable: false),
-                    Persuasion = table.Column<int>(type: "INTEGER", nullable: false),
-                    Religion = table.Column<int>(type: "INTEGER", nullable: false),
-                    Slight_of_hand = table.Column<int>(type: "INTEGER", nullable: false),
-                    Stealth = table.Column<int>(type: "INTEGER", nullable: false),
-                    Survival = table.Column<int>(type: "INTEGER", nullable: false)
+                    Name = table.Column<string>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -223,6 +206,8 @@ namespace DnDCharacterCreator.Migrations
                     Class = table.Column<int>(type: "INTEGER", nullable: false),
                     Level = table.Column<int>(type: "INTEGER", nullable: false),
                     Alignment = table.Column<string>(type: "TEXT", nullable: false),
+                    Hit_point_maximum = table.Column<int>(type: "INTEGER", nullable: false),
+                    Hit_point_current = table.Column<int>(type: "INTEGER", nullable: false),
                     Background = table.Column<int>(type: "INTEGER", nullable: false),
                     EXP = table.Column<int>(type: "INTEGER", nullable: false),
                     Inventory = table.Column<int>(type: "INTEGER", nullable: false),
