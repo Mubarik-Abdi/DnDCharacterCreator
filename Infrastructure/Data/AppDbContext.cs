@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
 
+
 namespace DnDCharacterCreator.Infrastructure.Data
 {
     public class AppDbContext : DbContext
